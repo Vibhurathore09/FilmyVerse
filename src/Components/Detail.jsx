@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactStars from "react-stars";
 import { useParams } from "react-router-dom";
-import { getDoc } from "firebase/firestore";
 import { db } from "../Firebase/Firebase";
-import { doc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { ThreeCircles } from "react-loader-spinner";
 import Reviews from "./Reviews";
+
 const Detail = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
   const [data, setData] = useState({
     title: "",
     year: "",
@@ -17,6 +16,7 @@ const Detail = () => {
     rating: 0,
     rated: 0,
   });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -57,7 +57,7 @@ const Detail = () => {
           </div>
         </>
       )}
-    </div>  
+    </div>
   );
 };
 

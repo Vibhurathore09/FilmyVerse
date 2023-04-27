@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.App{
-  height : 100%;
+.App {
+  height: 100%;
 }
 
 body {
@@ -26,15 +26,27 @@ body {
 }
 .card {
   background-color: #1e1e1e;
-  color: white;
+  color: black  ;
   border: 1px solid #1e1e1e;
   border-radius: 4px;
-  
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #f0f0f0 38%,
+    #f0f0f0 40%,
+    #e5e5e5 48%
+  );
+  animation: load89234 2s infinite;
 }
-.header{
+.header {
   background-color: #202127;
-  
 }
-.addNew{
+.addNew {
   float: right;
+}
+
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
+  }
 }
